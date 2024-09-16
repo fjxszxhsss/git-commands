@@ -60,6 +60,7 @@ $ git remote -v                            # 查看远程版本库信息
 $ git remote show    <remote>              # 查看指定远程版本库信息
 $ git remote add     <aliasName> <url>     # 创建远程版本库别名
 $ git remote remove  <aliasName>           # 删除远程版本库别名
+$ git push <aliasName of remote repository> --delete <branch_name of remote repository>  # 删除远程库分支
 
 -----本地库推送到远程库------
 场景一(也是最常见的情况)：本地库从从远程库clone的
