@@ -27,7 +27,7 @@ $ git blame <file>                     # 以列表方式查看指定文件的提
 
 
 
-# 撤销
+# 撤销提交
 - git reset
 1. git reset HEAD 文件名                # 撤销某个文件的git add操作，把它从暂存区(stage)撤回到working dictory(工作区) 
 2. git reset --soft  HEAD^/commit ID    # 撤销到最近的提交或者指定的某次提交，但仅仅只是撤销已提交的文件，不会修改暂存区和工作区, 这个很常用，因为我们经常会误提交某个文件
