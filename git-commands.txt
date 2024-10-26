@@ -19,11 +19,29 @@ $ git commit -m "commit message"       # 提交所有更新过的文件
 $ git commit -amend                    # 修改最后一个提交comment信息
 
 
+# 分支与标签
+$ git branch                           # 显示所有本地分支
+$ git branch -r                        # 显示所有远程分支
+$ git branch -a                        # 显示所以本地分支+所有远程分支
+$ git branch -vv                       # 显示本地分支与远程分支的映射关系
+$ git branch      <branchName>         # 创建新分支
+$ git checkout    <branchName>         # 切换到指定分支或标签
+$ git checkout -b <branchName>         # 创建并切换到分支
+$ git branch   -D <branchName>         # 删除本地分支
+
+
+
+# 合并
+$ git merge <branch>                   # 合并指定分支到当前分支
+$ git rebase <branch>                  # 衍合指定分支到当前分支 
+
 
 # 查看提交历史
 $ git log                              # 查看提交历史
 $ git log -p <file>                    # 查看指定文件的提交历史
 $ git blame <file>                     # 以列表方式查看指定文件的提交历史
+$ git commit --amend --only            # 修改最近一次提交的commit message.
+$ git log -1 --name-only               # 查看最近一次提交都提交了哪些文件
 
 
 
@@ -40,36 +58,18 @@ $ git blame <file>                     # 以列表方式查看指定文件的提
 2. git reset --soft  commit id     # 重置到指定的commit id
 3. git push origin(aliasName of remote repository) 本地分支:远程分支  --force
 
-
-
-# 分支与标签
-$ git branch                           # 显示所有本地分支
-$ git branch -r                        # 显示所有远程分支
-$ git branch -a                        # 显示所以本地分支+所有远程分支
-$ git branch -vv                       # 显示本地分支与远程分支的映射关系
-$ git branch      <branchName>         # 创建新分支
-$ git checkout    <branchName>         # 切换到指定分支或标签
-$ git checkout -b <branchName>         # 创建并切换到分支
-$ git branch   -D <branchName>         # 删除本地分支
-
-
-
-# 合并
-$ git merge <branch>                   # 合并指定分支到当前分支
-$ git rebase <branch>                  # 衍合指定分支到当前分支            
-
-
-
+           
+		   
 
 ========================================================远程操作命令=========================================
 
 # git remote 命令
-$ git remote -v                            # 查看远程版本库信息
-$ git remote show    <remote>              # 查看指定远程版本库信息
-$ git remote add     <aliasName> <url>     # 创建远程版本库别名
-$ git remote remove  <aliasName>           # 删除远程版本库别名
+$ git remote -v                            												 # 查看远程库信息
+$ git remote show    <aliasName>              										     # 查看指定远程库信息
+$ git remote add     <aliasName> <url>     												 # 创建远程库别名
+$ git remote remove  <aliasName>           												 # 删除远程库别名
 $ git push <aliasName of remote repository> --delete <branch_name of remote repository>  # 删除远程库分支
-$ git branch --set-upstream-to=origin/master # 将本地当前分支与远程库的master分支关联
+$ git branch --set-upstream-to=origin/master 											 # 将本地当前分支与远程库的master分支关联
 
 -----本地库推送到远程库------
 场景一(也是最常见的情况)：本地库从从远程库clone的
@@ -84,7 +84,7 @@ $ git branch --set-upstream-to=origin/master # 将本地当前分支与远程库
 $ git init
 $ git checkout -b local_branch                                         -- 创建一个本地分支，用于推送到远程库
 $ git add, git commit                                                  -- 本地添加相应文件后，提交到本地库
-$ git remote add origin git@github.com:fjxszxhsss/git-demo.git         -- 将本地库关联到你想要的远程库
+$ git remote add origin git@github.com:fjxszxhsss/git-demo.git         -- 创建远程库别名
 $ git push origin local_branch:remote_branch                           -- 将本地库local_branch推送到远程库并会自动创建远程库分支remote_branch
 
 
